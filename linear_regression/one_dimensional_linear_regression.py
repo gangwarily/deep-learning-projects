@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import linear_regression.calculate_linear as linear
 
 X = []
 Y = []
@@ -18,14 +19,7 @@ Y = np.asarray(Y)
 plt.scatter(X, Y)
 # plt.show()
 
-# Calculate the best fit a + b
-denominator = X.dot(X) - X.mean() * X.sum()
-
-a = (Y.dot(X).sum() - Y.mean() * X.sum()) / denominator
-b = (Y.mean() * X.dot(X) - X.mean() * Y.dot(X).sum()) / denominator
-
-# Calculate prediction
-Y_hat = a * X + b
+Y_hat = linear.calculate_linear_values(X, Y)
 
 # Plot with predictions
 plt.scatter(X, Y)
