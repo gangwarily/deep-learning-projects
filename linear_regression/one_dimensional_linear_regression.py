@@ -19,7 +19,7 @@ Y = np.asarray(Y)
 plt.scatter(X, Y)
 # plt.show()
 
-Y_hat = linear.calculate_linear_values(X, Y)
+Y_hat = linear.calculate_y_hat(X, Y)
 
 # Plot with predictions
 plt.scatter(X, Y)

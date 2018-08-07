@@ -1,6 +1,7 @@
 # Utility function for calculating a and b for linear regression
 
-def calculate_linear_values(X, Y):
+
+def calculate_y_hat(X, Y):
     # Calculate the best fit a + b
     denominator = X.dot(X) - X.mean() * X.sum()
 
