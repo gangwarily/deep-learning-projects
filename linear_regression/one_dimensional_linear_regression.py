@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import linear_regression.calculate_linear as linear
+import linear_regression.linear_utils as linear
 
 X = []
 Y = []
@@ -12,8 +12,8 @@ for line in open('csv/data_1d.csv'):
     Y.append(float(y))
 
 # Converting regular arrays into numpy arrays
-X = np.asarray(X)
-Y = np.asarray(Y)
+X = np.array(X)
+Y = np.array(Y)
 
 # Visualize the input data
 plt.scatter(X, Y)
@@ -27,8 +27,4 @@ plt.plot(X, Y_hat)
 plt.show()
 
 # Calculate R squared
-parenthesis_residual = Y - Y_hat
-parenthesis_total = Y - Y.mean()
-r_squared = 1 - parenthesis_residual.dot(parenthesis_residual).sum() \
-            / parenthesis_total.dot(parenthesis_total).sum()
-print(r_squared)
+print(linear.calculate_r_squared(Y, Y_hat))
