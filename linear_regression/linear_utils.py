@@ -17,12 +17,3 @@ def calculate_r_squared(Y, Y_hat):
     r_squared = 1 - residual.dot(residual).sum() \
                 / total.dot(total).sum()
     return r_squared
-
-
-def calculate_r_squared_matrix(Y, Y_hat):
-    residual = Y - Y_hat
-    total = Y - Y.mean()
-    r_squared = 1 - residual.dot(residual) \
-                / total.dot(total)
-    return r_squared
-
