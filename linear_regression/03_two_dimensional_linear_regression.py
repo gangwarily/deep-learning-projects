@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import linear_regression.linear_utils as linear
 
 BIAS = 1
@@ -9,7 +8,7 @@ Y = []
 
 for line in open('csv/data_2d.csv'):
     x1, x2, y = line.split(',')
-    X.append([float(x1), float(x2), BIAS]) # add the bias term
+    X.append([float(x1), float(x2), BIAS])
     Y.append(float(y))
 
 
