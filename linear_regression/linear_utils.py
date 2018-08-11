@@ -1,4 +1,8 @@
+import numpy as np
+
 # Utility function for calculating a and b for linear regression
+# I wrote this class since a lot of the logic in linear regression is repeated
+# and I didn't want to copy-paste over multiple files.
 
 
 def calculate_y_hat(X, Y):
@@ -17,3 +21,7 @@ def calculate_r_squared(Y, Y_hat):
     r_squared = 1 - residual.dot(residual).sum() \
                 / total.dot(total).sum()
     return r_squared
+
+
+def calculate_W(X, Y):
+    return np.linalg.solve(np.dot(X.T, X), np.dot(X.T, Y))

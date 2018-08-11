@@ -21,7 +21,7 @@ print('Shape of Y is ' + str(Y.shape))
 # Plot in 3D coordinate space
 # TODO: Code example didn't work...need to investigate
 
-w = np.linalg.solve(np.dot(X.T, X), np.dot(X.T, Y))
+w = linear.calculate_W(X, Y)
 
 print('Shape of w is ' + str(w.shape))
 
