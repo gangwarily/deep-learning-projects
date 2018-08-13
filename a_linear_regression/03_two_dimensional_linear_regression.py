@@ -1,5 +1,5 @@
 import numpy as np
-import linear_regression.linear_utils as linear
+import a_linear_regression.linear_utils as linear
 
 BIAS = 1
 
