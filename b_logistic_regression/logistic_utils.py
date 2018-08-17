@@ -51,3 +51,7 @@ def forward(X, W, b):
 
 def score(Y, P):
     return np.mean(Y == P)
+
+
+def cross_entropy(T, Y):
+    return - np.sum(T * np.log(Y) + (1 - T) * np.log(1 - Y))
