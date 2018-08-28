@@ -175,3 +175,5 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+# Large files
+large_files/train.csv

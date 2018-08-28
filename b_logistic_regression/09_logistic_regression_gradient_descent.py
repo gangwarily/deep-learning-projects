@@ -31,6 +31,7 @@ for i in range(10000):
     train_costs.append(c_train)
     test_consts.append(c_test)
 
+    # This is doing two steps in GD. It is calculating both the 'a' value of (WX + b) and W / b.
     W -= learning_rate * Xtrain.T.dot(predictionTrain - Ytrain)
     b -= learning_rate * (predictionTrain - Ytrain).sum()
 

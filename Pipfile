@@ -9,6 +9,8 @@ matplotlib = "*"
 pandas = "*"
 xlrd = "*"
 scipy = "*"
+sortedcontainers = "*"
+theano = "*"
 
 [dev-packages]
 
