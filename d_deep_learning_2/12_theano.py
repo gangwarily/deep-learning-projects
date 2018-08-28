@@ -1,3 +1,4 @@
+# Make sure to download the kaggle csv file for digit recognizer
 import theano.tensor as T
 import theano
 import numpy as np
@@ -29,18 +30,19 @@ b1_init = np.zeros(M)
 W2_init = np.random.randn(M, K) / np.sqrt(M)
 b2_init = np.zeros(K)
 
-# Theano variables
 thX = T.matrix('X')
 thT = T.matrix('T')
 W1 = theano.shared(W1_init, 'W1')
 b1 = theano.shared(b1_init, 'b1')
-W2 = theano.shared(W1_init, 'W2')
-b2 = theano.shared(b1_init, 'b2')
+W2 = theano.shared(W2_init, 'W2')
+b2 = theano.shared(b2_init, 'b2')
 
 thZ = T.nnet.relu(thX.dot(W1) + b1)
 thY = T.nnet.softmax(thZ.dot(W2) + b2)
 
 cost = -(thT * T.log(thY)).sum() + reg*((W1*W1).sum() + (b1*b1).sum() + (W2*W2).sum() + (b2*b2).sum())
+# cost = T.sum(T.nnet.categorical_crossentropy(thY, thT)) # Messing with using theano's categorical cross-entropy func
+
 prediction = T.argmax(thY, axis=1)
 
 update_W1 = W1 - lr * T.grad(cost, W1)
